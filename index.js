@@ -17,6 +17,7 @@ const requestLogger = (request, response, next) => {
   app.use(cors())
   app.use(express.json())
   app.use(requestLogger)
+  app.use(express.static('build'))
   
 
 let notes = [
@@ -43,6 +44,11 @@ let notes = [
   {
     id: 5,
     content: "We are happy to code",
+    important: true
+  },
+  {
+    id: 6,
+    content: "Ahh' Deployment is working fine now",
     important: true
   }
 ]
@@ -104,7 +110,7 @@ app.delete('/api/notes/:id', (request, response) => {
 
 app.use(unknownEndpoint)
 
-const PORT = process.env.PORT || 3005
+const PORT = process.env.PORT || 4000
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
