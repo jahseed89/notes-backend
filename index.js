@@ -1,6 +1,9 @@
 const express = require('express')
+const dotenv = require('dotenv')
 const app = express()
 const cors = require('cors')
+
+dotenv.config()
 
 const requestLogger = (request, response, next) => {
     console.log('Method:', request.method)
@@ -110,7 +113,8 @@ app.delete('/api/notes/:id', (request, response) => {
 
 app.use(unknownEndpoint)
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
