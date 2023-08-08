@@ -10,7 +10,6 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "proxy": "http://localhost:4000",
   "keywords": [],
   "author": "",
   "license": "ISC",
